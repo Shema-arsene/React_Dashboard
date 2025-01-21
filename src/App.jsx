@@ -1,10 +1,16 @@
-import react from "react"
+import React from "react"
+import Sidebar from "./Components/Sidebar"
+import Navbar from "./Components/Navbar"
 
 const App = () => {
   return (
-    <>
-      <h1 className="text-3xl font-bold text-center my-40">Hello world!</h1>
-    </>
+    <main className="flex">
+      <Sidebar />
+      <div className="flex flex-col flex-1 relative">
+        <Navbar />
+      </div>
+      <div className=""></div>
+    </main>
   )
 }
 
