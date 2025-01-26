@@ -34,19 +34,23 @@ const chartdata = [
   },
 ]
 
+const dataFormatter = (number) => {
+  return "$ " + Intl.NumberFormat("us").format(number).toString()
+}
+
 const AreaChartComponent = () => {
   return (
     <Card className="mt-3">
       <Title>Newsletter revenue overtime (USD)</Title>
       <AreaChart
-        className="h-80"
+        className="h-80 mt-4"
         data={chartdata}
         index="date"
-        // categories={["SolarPanels", "Inverters"]}
         categories={["SemiAnalysis", "The Pragmatic Engineer"]}
-        valueFormatter={(number) =>
-          `$${Intl.NumberFormat("us").format(number).toString()}`
-        }
+        // valueFormatter={(number) =>
+        //   `$${Intl.NumberFormat("us").format(number).toString()}`
+        // }
+        valueFormatter={dataFormatter}
         onValueChange={(v) => console.log(v)}
       />
     </Card>
